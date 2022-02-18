@@ -15,6 +15,11 @@ const hbs = require("hbs");
 
 const app = express();
 
+//Crypto Api
+const CoinGecko = require('coingecko-api')
+
+const CoinGeckoClient = new CoinGecko();
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
