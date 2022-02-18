@@ -1,6 +1,6 @@
 const { Schema, model} = require('mongoose');
 
-const cryptoSchema = new Schema(
+const stockSchema = new Schema(
     {
         name: String,
         price: Number,
@@ -11,6 +11,6 @@ const cryptoSchema = new Schema(
     }
 ) 
 
-const Crypto = model('Crypto', cryptoSchema);
+const Stock = model('Stock', stockSchema);
 
-module.exports = Crypto;
+module.exports = Stock;

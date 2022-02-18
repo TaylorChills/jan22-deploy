@@ -28,7 +28,19 @@ const index = require("./routes/index");
 app.use("/", index);
 
 const authRoutes = require("./routes/auth");
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
+
+const portfolioRoutes = require('./routes/portfolio.route')
+app.use('/', portfolioRoutes);
+
+const homePageRoutes = require('./routes/home-page.route')
+app.use('/', homePageRoutes);
+
+const stocksPageRoutes = require('./routes/stocks-page.route')
+app.use('/', stocksPageRoutes);
+
+const cryptoPageRoutes = require('./routes/crypto-page.route')
+app.use('/', cryptoPageRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
