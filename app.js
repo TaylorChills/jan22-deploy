@@ -12,12 +12,13 @@ const express = require("express");
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
-
 const app = express();
+
+//Handles axios requests
+const axios = require('axios')
 
 //Crypto Api
 const CoinGecko = require('coingecko-api')
-
 const CoinGeckoClient = new CoinGecko();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -27,6 +28,16 @@ const projectName = "finance-app";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+
+//Crypto API test
+const getCoins = async () => {
+    return await axios({
+        URL:'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+    })
+}
+
+
+
 
 // 👇 Start handling routes here
 const index = require("./routes/index");

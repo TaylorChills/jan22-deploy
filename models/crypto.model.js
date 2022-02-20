@@ -2,8 +2,9 @@ const { Schema, model} = require('mongoose');
 
 const cryptoSchema = new Schema(
     {
+        id: String,
         name: String,
-        price: Number,
+       // current_price: Number,
 
     },
     {
