@@ -23,16 +23,8 @@ async function getCoins() {
 router.get('/crypto-page', async(req, res, next) => {
     let data = await getCoins()
 
-    res.render('crypto-page', {data
-    })
-});
-
-
-router.get("/", async(req, res, next) => {
-    let data = await getCoins()
-    
-    res.render("index", {data});
-  });
+    res.render('crypto-page', {data});
+    });
 
 
 
