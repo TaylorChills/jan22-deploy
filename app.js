@@ -27,10 +27,7 @@ require("./config")(app);
 const projectName = "finance-app";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.use(function(req, res, next) {
-    app.locals.user = req.session.user;
-    next();
-})
+
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 

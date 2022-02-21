@@ -13,10 +13,7 @@ const userSchema = new Schema(
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   },
-  {
-    //coins array will hold the coins in the users portfolio
-    coins: []
-  }
+  
 );
 
 
