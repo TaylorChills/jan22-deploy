@@ -1,31 +1,30 @@
 <h3>this is crypto page</h3>
 
 
-{{#each data}}
+<a href="/home">Return</a>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Price</th>
-    <th>market cap</th>
-    <th>24 hour trading</th>
-    <th>volume</th>
-    <th>circulating supply</th>
-    <th>max supply</th>
-    <th>total supply</th>
+    <th>Market Cap</th>
+    <th>24 Hour Trading</th>
+    <th>Volume</th>
+    <th>circulating Supply</th>
+    <th>Max Supply</th>
+    <th>Total Supply</th>
     
   </tr>
   <tr>
-    <td>{{this.name}}</td>
-    <td>{{this.current_price}}</td>
-    <td>{{this.market_cap}}</td>
-    <td>{{this.price_change_percentage_24h}}</td>
-    <td>{{this.}}</td>
-    <td>{{this.circulating_supply}}</td>
-    <td>{{this.max_supply}}</td>
+    <td>{{name}}</td>
+    <td>{{market_data.current_price.usd}}</td>
+    <td>{{market_data.market_cap.usd}}</td>
+    <td>{{market_data.price_change_percentage_24h_in_currency.usd}}</td>
+    <td>{{market_data.total_volume.usd}}</td>
+    <td>{{market_data.circulating_supply}}</td>
+    <td>{{market_data.max_supply}}</td>
     <td>{{this.total_supply}}</td>
   </tr>
 </table>
 
 
-{{/each}}

@@ -6,16 +6,23 @@ const async = require('hbs/lib/async');
 const router = require("express").Router();
 
 /* GET home page */
-router.get("/", async(req, res, next) => {
+router.get("/home", async(req, res, next) => {
   let data = await getCoins()
   
   res.render("index", {data});
 });
 
-router.get('/crypto-info', (req, res, next) => {
-  res.render('crypto-page')
-})
+//link to home page
+router.get("/crypto-info/:id", async(req, res, next) => {
+  const {id} = req.params
+  let response = await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`);
+  let data = response.data;
+  console.log(data)
 
+  res.render("crypto-page", data);
+  });
+
+//Api link for coin gecko
 async function getCoins() {
   try{
   let response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false');
@@ -26,6 +33,7 @@ async function getCoins() {
     console.log(err)
   }
 }
+
 
 
 
