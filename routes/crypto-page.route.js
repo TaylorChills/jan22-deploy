@@ -21,7 +21,10 @@ async function getCoins() {
 
 
 router.get('/crypto-page', async(req, res, next) => {
-    res.render('crypto-page')
+    let data = await getCoins()
+
+    res.render('crypto-page', {data
+    })
 });
 
 
