@@ -25,6 +25,11 @@ router.get('/crypto-page', async(req, res, next) => {
 });
 
 
+router.get("/", async(req, res, next) => {
+    let data = await getCoins()
+    
+    res.render("index", {data});
+  });
 
 
 
