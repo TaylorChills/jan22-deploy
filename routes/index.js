@@ -1,10 +1,7 @@
 
-
 const axios = require('axios');
 const async = require('hbs/lib/async');
 //const { response } = require('../app');
-
-//const { response } = require("../app");
 
 const router = require("express").Router();
 
@@ -14,6 +11,10 @@ router.get("/", async(req, res, next) => {
   
   res.render("index", {data});
 });
+
+router.get('/crypto-info', (req, res, next) => {
+  res.render('crypto-page')
+})
 
 async function getCoins() {
   try{
