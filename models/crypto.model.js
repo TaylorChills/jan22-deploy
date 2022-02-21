@@ -4,9 +4,11 @@ const {Schema, model} = require('mongoose');
 
 const cryptoSchema = new Schema(
     {
-        id: String,
-        name: String,
-       // current_price: Number,
+
+        //ask if this name is a good way to reference the coins
+        id: this.name,
+        quantity: Number
+       
 
     },
     {
