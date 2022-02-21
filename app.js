@@ -29,18 +29,9 @@ const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowe
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 
-//Crypto API test
-const getCoins = async () => {
-    return await axios({
-        URL:'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
-    })
-}
-
-
-
 
 // 👇 Start handling routes here
-const index = require("./routes/index");
+const index = require("./routes/index.js");
 app.use("/", index);
 
 const authRoutes = require("./routes/auth");
@@ -49,14 +40,13 @@ app.use("/", authRoutes);
 const portfolioRoutes = require('./routes/portfolio.route')
 app.use('/', portfolioRoutes);
 
-const homePageRoutes = require('./routes/home-page.route')
-app.use('/', homePageRoutes);
-
 const stocksPageRoutes = require('./routes/stocks-page.route')
 app.use('/', stocksPageRoutes);
 
 const cryptoPageRoutes = require('./routes/crypto-page.route')
 app.use('/', cryptoPageRoutes);
+
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

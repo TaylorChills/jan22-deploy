@@ -1,4 +1,6 @@
-const { Schema, model} = require('mongoose');
+
+
+const {Schema, model} = require('mongoose');
 
 const cryptoSchema = new Schema(
     {
@@ -11,6 +13,7 @@ const cryptoSchema = new Schema(
         timestamps: true,
     }
 ) 
+
 
 const Crypto = model('Crypto', cryptoSchema);
 
