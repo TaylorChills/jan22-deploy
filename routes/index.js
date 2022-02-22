@@ -6,7 +6,7 @@ const async = require('hbs/lib/async');
 const router = require("express").Router();
 
 /* GET home page */
-router.get("/home", async(req, res, next) => {
+router.get("/", async(req, res, next) => {
   let data = await getCoins()
   
   res.render("index", {data});
