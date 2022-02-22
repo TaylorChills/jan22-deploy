@@ -1,1 +1,31 @@
+<<<<<<< HEAD
 <h3>this is the User page</h3>
+=======
+<h3>this is the User page</h3>
+
+<a href="/">Return</a>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Market Cap</th>
+    <th>24 Hour Trading</th>
+    <th>Volume</th>
+    <th>circulating Supply</th>
+    <th>Max Supply</th>
+    <th>Total Supply</th>
+    
+  </tr>
+  <tr>
+    <td>{{name}}</td>
+    <td>{{market_data.current_price.usd}}</td>
+    <td>{{market_data.market_cap.usd}}</td>
+    <td>{{market_data.price_change_percentage_24h_in_currency.usd}}</td>
+    <td>{{market_data.total_volume.usd}}</td>
+    <td>{{market_data.circulating_supply}}</td>
+    <td>{{market_data.max_supply}}</td>
+    <td>{{market_data.total_supply}}</td>
+  </tr>
+</table>
+>>>>>>> d642ca1ef43952fc89471af2e7c01073255043a6
