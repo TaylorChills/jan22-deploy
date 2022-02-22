@@ -5,12 +5,16 @@ const async = require('hbs/lib/async');
 
 const router = require("express").Router();
 
+const Crypto = require('../models/crypto.model');
+
 /* GET home page */
 router.get("/", async(req, res, next) => {
   let data = await getCoins()
   
   res.render("index", {data});
 });
+
+
 
 //link to home page
 router.get("/crypto-info/:id", async(req, res, next) => {
@@ -33,7 +37,6 @@ async function getCoins() {
     console.log(err)
   }
 }
-
 
 
 
