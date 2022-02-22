@@ -2,6 +2,7 @@ const router = require('express').Router();
 const axios = require('axios');
 const async = require('hbs/lib/async');
 const Crypto = require('../models/crypto.model');
+const User = require('../models/User.model');
 
 //Api link
 async function getCoins() {
@@ -17,22 +18,33 @@ async function getCoins() {
   
 
 router.get('/portfolio', async(req, res, next) => {
+   
+   try {
     let data = await getCoins()
+    //console.log(data)
+    let user = await User.findById(req.session.user._id).populate('coins')
+    console.log(user)
 
-    res.render('portfolio', {data})
+
+    let coinCheck = []
+    data.forEach((apiCoin) => {
+      user.coins.forEach((userCoin) => {
+        if(apiCoin.id === userCoin.name){
+          coinCheck.push(apiCoin)
+        }
+      })
+    })
+
+    console.log('User coins', coinCheck)
+
+
+    res.render('portfolio', {coinCheck})
+   } catch (error) {
+     
+   } 
 });
 
 
-router.post('/portfolio/:id/add', (req, res, next) => {
-    const {id, quantity} = req.body;
-
-    Crypto.create({id, quantity})
-    .then((createdCrypto) => {
-        console.log('createdCrypto', id);
-        res.redirect('/portfolio');
-    })
-    .catch((err) => next(err));
-})
 
 
 module.exports = router;

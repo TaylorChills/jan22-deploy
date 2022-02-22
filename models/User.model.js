@@ -5,18 +5,16 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      // unique: true -> Ideally, should be unique, but its up to you
+
     },
-    password: String,
+
+      password: String,
+      coins:[{ type: Schema.Types.ObjectId, ref: 'Crypto'}]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   },
-  {
-    coins:[{ type: Schema.Types.ObjectId, ref: 'Crypto'}]
-  }
-  
 );
 
 

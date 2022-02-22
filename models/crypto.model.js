@@ -6,7 +6,8 @@ const cryptoSchema = new Schema(
     {
 
         //ask if this name is a good way to reference the coins
-        id: String,
+        
+        name: String,
         quantity: Number
        
 
