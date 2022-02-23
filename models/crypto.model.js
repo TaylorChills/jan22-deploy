@@ -8,7 +8,7 @@ const cryptoSchema = new Schema(
         //ask if this name is a good way to reference the coins
         
         name: String,
-        quantity: Number
+        quantity: Number,
        
 
     },

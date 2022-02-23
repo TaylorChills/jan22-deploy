@@ -11,10 +11,7 @@ const CoinGeckoClient = new CoinGecko();
 
 
 
-  router.get('/crypto-add/:id', (req, res, next) => {
-    const {id} = req.params
-    res.render('crypto-add', {id})
-});
+  
 
   /* router.post('/crypto-add/:id', (req, res, next) => {
     const {id} = req.params 

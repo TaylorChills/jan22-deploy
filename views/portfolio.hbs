@@ -1,4 +1,4 @@
-<h3>this is the User page</h3>
+<h3>{{user.username}}</h3>
 
 
 <a href="/">Return</a>
@@ -13,19 +13,34 @@
     <th>circulating Supply</th>
     <th>Max Supply</th>
     <th>Total Supply</th>
-
-
- 
+    <th>holdings</th>
   </tr>
+
+<tr>
+    
+
     {{#each coinCheck}}
-  <tr>
+  
+    
     <td>{{name}}</td>
     <td>{{current_price}}</td>
-    <td>{{market_cap.usd}}</td>
-    <td>{{price_change_percentage_24h_in_currency.usd}}</td>
-    <td>{{total_volume.usd}}</td>
+    <td>{{market_cap}}</td>
+    <td>{{price_change_percentage_24h}}</td>
+    <td>{{total_volume}}</td>
     <td>{{circulating_supply}}</td>
+    <td>{{max_supply}}</td>
     <td>{{total_supply}}</td>
+    <td>{{quantity}}</td>
+    
+    <td><a href="/crypto-info/{{this.id}}">info</a></td>
+    <td>
+    <form action="/portfolio/delete/{{id}}" method="post">
+    <button>Remove</button>
+    </form>
+    </td>
   </tr>
+
+  
+
 {{/each}}
 </table>

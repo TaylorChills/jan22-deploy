@@ -38,7 +38,7 @@ router.get("/crypto-info/:id", async(req, res, next) => {
   });
 
   
-
+//Add coin
   router.post('/crypto-add', (req, res, next) => {
     console.log(req.body)
     const {name, quantity} = req.body;
@@ -50,6 +50,11 @@ router.get("/crypto-info/:id", async(req, res, next) => {
     .then(() => res.redirect('/'))
     .catch((err) => next(err));
   })
+
+  router.get('/crypto-add/:id', (req, res, next) => {
+    const {id} = req.params
+    res.render('crypto-add', {id})
+});
 
 
   
