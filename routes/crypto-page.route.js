@@ -10,19 +10,5 @@ const CoinGeckoClient = new CoinGecko();
 
 
 
-
-  
-
-  /* router.post('/crypto-add/:id', (req, res, next) => {
-    const {id} = req.params 
-
-    Crypto.create({id, quantity})
-      .then((newCoin) => {
-        console.log('coin added', newCoin)
-        res.redirect('/');
-      });
-  }); */
-
-
 module.exports = router;
 
