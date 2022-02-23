@@ -86,9 +86,9 @@ a {
      /* border: 1px solid lightgray;  */ 
       /* padding: 5px 80px; */  
 	/* margin: 1px 80px; */
-	/* text-align: start; */
+	/* text-align: start;
 
-	text-align: center;
+	text-align: center; */
 	
 	
 
@@ -273,7 +273,37 @@ body {
 }
 
 
+/* stuff taylor touched */
 
+.total {
+  text-align: center;
+}
 
+.port-table {
+  display: flex;
+  justify-content: center;
+}
+  
 
+.port-rows, img {
+  width: 40px;
+  
+}
 
+.port-rows, th, td {
+  font-size: 20px;
+  
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.test {
+  
+}
+
+.port-buttons {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}

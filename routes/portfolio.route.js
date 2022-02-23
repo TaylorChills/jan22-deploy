@@ -31,8 +31,21 @@ router.get('/portfolio', async(req, res, next) => {
       })
     })
     
+    function displayMoney(arr) {
+      let total = 0
+        for(let i = 0; i < arr.length; i++){
+        total += arr[i].current_price * arr[i].quantity
+      } return Math.round(total * 100) /100
+      
+    }
+      let userMoney = displayMoney(coinCheck)
+      coinCheck.push({...data, userTotal: userMoney,})
+
+      console.log('testing', coinCheck)
+
     res.render('portfolio', {coinCheck})
-   } catch (error) {
+   } 
+   catch (error) {
      
    } 
 });
@@ -44,15 +57,15 @@ router.get('/crypto-update/:id', (req, res, next) => {
 
   try{
     let user = await User.findById(req.session.user._id).populate('coins')
+    .then((response) )
 
 
-
-
-    res.render('crypto-update.hbs' {})
+    res.render('crypto-update.hbs', {coinCheck})
   } catch (error) {
 
   }
 }) */
+
 
 
 
@@ -71,6 +84,9 @@ router.post('/portfolio/delete/:id', async(req, res, next) => {
     } catch (error) {
   }
 })
+
+
+
 
 
 
