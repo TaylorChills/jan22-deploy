@@ -221,7 +221,7 @@ body {
     outline: 0;
     border: 0;
     color: white;
-    background: $color-primary;
+    background: darkgray;
     transition: 0.3s;
     
     &:hover {
