@@ -38,7 +38,7 @@ router.get('/portfolio', async(req, res, next) => {
 });
 
 
-
+/* 
 router.get('/crypto-update/:id', (req, res, next) => {
   const coinId = req.params
 
@@ -52,7 +52,7 @@ router.get('/crypto-update/:id', (req, res, next) => {
   } catch (error) {
 
   }
-})
+}) */
 
 
 
