@@ -32,12 +32,18 @@
     <td>{{total_supply}}</td>
     <td>{{quantity}}</td>
     
-    <td><a href="/crypto-info/{{this.id}}">info</a></td>
+    <td><a href="/crypto-info/{{this.id}}">Info</a></td>
+
     <td>
-    <form action="/portfolio/delete/{{id}}" method="post">
-    <button>Remove</button>
-    </form>
+      <a href="crypto-update/{{this.id}}">Update</a>
     </td>
+
+    <td>
+      <form action="/portfolio/delete/{{id}}" method="post">
+        <button>Remove</button>
+      </form>
+    </td>
+
   </tr>
 
   

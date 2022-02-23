@@ -1,12 +1,13 @@
 <h2>Add Coin to Portfolio</h2>
 
-    <form action="/crypto-add" method="post">
+    <form action="/crypto-add/:id" method="post">
 
         <label for="name"></label>
         <br>
         <input name="name" value="{{id}}" readonly>
         <br>
         
+
         <label for="quantity">Quantity</label>
         <br>
         <input type="number" name="quantity" min="0">

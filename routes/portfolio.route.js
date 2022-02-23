@@ -39,6 +39,20 @@ router.get('/portfolio', async(req, res, next) => {
 
 
 
+router.get('/crypto-update/:id', (req, res, next) => {
+  const coinId = req.params
+
+  try{
+    let user = await User.findById(req.session.user._id).populate('coins')
+
+
+
+
+    res.render('crypto-update.hbs' {})
+  } catch (error) {
+
+  }
+})
 
 
 
