@@ -39,11 +39,11 @@ router.get('/portfolio', async(req, res, next) => {
       
     }
       let userMoney = displayMoney(coinCheck)
-      coinCheck.push({...data, userTotal: userMoney,})
+      //coinCheck.push({...data, ,})
 
       console.log('testing', coinCheck)
 
-    res.render('portfolio', {coinCheck})
+    res.render('portfolio', {coinCheck, userTotal: userMoney})
    } 
    catch (error) {
      

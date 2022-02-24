@@ -1,8 +1,9 @@
 
 <div>
 <table class="table">
-<thead>
+
     <tr>
+      <th></th>
       <th class="rank" >#</th>
       <th class="fixed">Name</th>
       <th class="fixed">Price</th>
@@ -10,21 +11,20 @@
       <th class="links" >info</th>
       <th class="links">add</th>
     </tr>
-  </thead>
+ 
 </table>
 
 {{#each data}}
 <table class="table" >
-  <tbody>
    <tr>
+    <td><img src="{{image}}" alt="crypto-icon"></td>
     <td class="rank">{{this.market_cap_rank}}</td>
     <td class="fixed">{{this.name}}</td>
     <td class="fixed">{{this.current_price}}</td>
     <td class="fixed">{{this.price_change_percentage_24h}}</td>
     <td class="links"><a href="/crypto-info/{{this.id}}">info</a></td>
     <td class="links"><a href="/crypto-add/{{this.id}}">add</a></td>
-</tr>
-    </tbody>
+</tr
 
     
 </table>
