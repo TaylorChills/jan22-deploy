@@ -96,8 +96,8 @@ body {
     font-size: $font-size;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(90deg, #daa520 20%, #101010 90%);
+  /*   transform: translate3d(0, 0, 0);
+    background: linear-gradient(90deg, #daa520 20%, #101010 90%); */
     height: 100vh;
 }
 
@@ -215,17 +215,23 @@ body {
 /* stuff taylor touched */
 body {
   background-color: #a2a2a2;
-  
 }
 
 
 .total {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #353232;
 }
+
+
 
 .port-table {
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
+  
+  
 }
   
 
@@ -236,21 +242,32 @@ body {
 
 .port-rows, th, td {
   font-size: 20px;
-  
-  padding-right: 1rem;
+  padding-top: 10px;
+  padding-right: 2rem;
+  padding-left: 2rem;
   text-align: center;
+  background-color: rgba(53, 45, 49, 0.6);
 }
 
-.test {
-  
-}
 
-.port-buttons {
-  font-size: 16px;
+.port-buttons, button{
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem;
+  justify-content: space-between;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  font-size: 18px;
+  
+  
 }
+
+/* .port-buttons , button {
+  font-size: ;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;     
+} */
 
 
 

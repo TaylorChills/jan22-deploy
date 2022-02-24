@@ -24,6 +24,7 @@ async function getCoins() {
 router.get("/", async(req, res, next) => {
   let data = await getCoins()
   
+  
   res.render("index", {data});
 });
 
@@ -56,6 +57,22 @@ router.get("/crypto-info/:id", async(req, res, next) => {
     res.render('crypto-add', {id})
 });
 
+/* 
+function status(data){
+  let green = rgb(0, 255, 0)
+  let red = rgb(255, 0, 0)
+  let status = document.getElementById("24hr-status");
+  let perc = data.price_change_percentage_24h
+
+  if(perc < 0){
+    status.style.color = green
+  } else {
+    status.style.color = red
+  }
+}
+console.log('This is a test',data)
+
+status(data) */
 
   
 

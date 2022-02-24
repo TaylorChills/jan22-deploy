@@ -26,7 +26,7 @@ router.get('/portfolio', async(req, res, next) => {
     data.forEach((apiCoin) => {
       user.coins.forEach((userCoin) => {
         if(apiCoin.id === userCoin.name){
-          coinCheck.push({...apiCoin, quantity: userCoin.quantity,})
+          coinCheck.push({...apiCoin, userCoinId: userCoin._id, quantity: userCoin.quantity,})
         }
       })
     })
@@ -51,22 +51,25 @@ router.get('/portfolio', async(req, res, next) => {
 });
 
 
-/* 
-router.get('/crypto-update/:id', (req, res, next) => {
-  const coinId = req.params
 
-  try{
-    let user = await User.findById(req.session.user._id).populate('coins')
-    .then((response) )
+router.get('/crypto-update/:id', async(req, res, next) => {
+  const {id} = req.params
+  const coin = await Crypto.findById(id)
+  res.render('crypto-update.hbs/', {coin})
+ 
+})
 
+router.post('/crypto-update/:id', async(req, res, next) => {
 
-    res.render('crypto-update.hbs', {coinCheck})
-  } catch (error) {
+  const {id} = req.params
 
-  }
-}) */
+  const number = req.body.quantity
 
+  await Crypto.findByIdAndUpdate(id, {quantity: number})
 
+  res.redirect('/portfolio')
+
+})
 
 
 //Remove from portfolio

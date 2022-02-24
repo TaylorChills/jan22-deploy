@@ -1,16 +1,16 @@
-<h2>Add Coin to Portfolio</h2>
+<h2>Update Quantity</h2>
 
-    <form action="/crypto-add/:id" method="post">
+    <form action="/crypto-update/{{coin._id}}" method="post">
 
-        <label for="name"></label>
+        <label for="name">{{coin.name}}</label>
         <br>
-        <input name="name" value="{{id}}" readonly>
+        <input name="name" value="{{coin.name}}" readonly>
         <br>
         
 
         <label for="quantity">Quantity</label>
         <br>
-        <input type="number" name="quantity" min="0">
+        <input type="number" name="quantity" min="0" value="{{coin.quantity}}">
         <br>
 
         <button type="submit">Submit</button>

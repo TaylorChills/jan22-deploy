@@ -1,33 +1,25 @@
 
-<div>
-<table class="table">
-
-    <tr>
-      <th></th>
-      <th class="rank" >#</th>
-      <th class="fixed">Name</th>
-      <th class="fixed">Price</th>
-      <th class="fixed">24Hr Change</th>
-      <th class="links" >info</th>
-      <th class="links">add</th>
+  <table cellspacing="0" class="port-table">
+    <tr class="port-rows">
+      <th class="table-logo"></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>24Hr Change</th>
+      <th>info</th>
+      <th>add</th>
     </tr>
- 
-</table>
-
-{{#each data}}
-<table class="table" >
-   <tr>
-    <td><img src="{{image}}" alt="crypto-icon"></td>
-    <td class="rank">{{this.market_cap_rank}}</td>
-    <td class="fixed">{{this.name}}</td>
-    <td class="fixed">{{this.current_price}}</td>
-    <td class="fixed">{{this.price_change_percentage_24h}}</td>
-    <td class="links"><a href="/crypto-info/{{this.id}}">info</a></td>
-    <td class="links"><a href="/crypto-add/{{this.id}}">add</a></td>
-</tr
-
-    
-</table>
-{{/each}}
-
+  
+    {{#each data}}
+    <tr class="port-rows">
+      <td><img src="{{image}}" alt="crypto-icon"></td>
+      <td>{{this.market_cap_rank}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.current_price}}</td>
+      <td>{{this.price_change_percentage_24h}}</td>
+      <td><a href="/crypto-info/{{this.id}}">info</a></td>
+      <td><a href="/crypto-add/{{this.id}}">+</a></td>
+    </tr
+    {{/each}}
+  </table>
 </div>
