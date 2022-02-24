@@ -21,6 +21,7 @@ const axios = require('axios')
 const CoinGecko = require('coingecko-api')
 const CoinGeckoClient = new CoinGecko();
 
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
@@ -33,6 +34,8 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 
 
 // 👇 Start handling routes here
+
+
 const index = require("./routes/index.js");
 app.use("/", index);
 
