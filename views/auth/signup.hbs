@@ -24,41 +24,50 @@
     <a href="/login">Login</a>
   </p>
 
-</form> --}} 
+</form> --}}
 
 <div class="user">
-    <header class="user__header">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-        <h1 class="user__title">SignUP</h1>
-    </header>
-    <form class="form" action="/signup" method="POST" id="form-container">
-    {{!-- <form class="form" action="/signup" method="POST" > --}}
-        <div class="form__group">
-            <input type="text" name="username" placeholder="Username" class="form__input" />
-        </div>
-        
-        
-        
-        <div class="form__group">
-          <input type="password" name="password" placeholder="Password" class="form__input" />
-        </div>
-        
-       
-        <div>
-         <button class="btn" type="submit">Create Account</button>
-        </div> 
+  <header class="user__header">
+    <img
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg"
+      alt=""
+    />
+    <h1 class="user__title">SignUP</h1>
+  </header>
+  <form class="form" action="/signup" method="POST" id="form-container">
 
-        {{#if errorMessage}}
-          <div class="error-message">{{errorMessage}}</div>
-        {{/if}}<br>
+    <div class="form__group">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        class="form__input"
+      />
+    </div>
 
-         <div>
-          <button class="btn" ><a href="/login">Login</a></button>
-        </div>
+    <div class="form__group">
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form__input"
+      />
+    </div>
 
-        <p class="btn" class="account-message">
-        Do you already have an account?
-        
-        </p>
-    </form>
+    <div>
+      <button class="btn" type="submit">Create Account</button>
+    </div>
+
+    {{#if errorMessage}}
+      <div class="error-message">{{errorMessage}}</div>
+    {{/if}}<br />
+
+    <div>
+      <button class="btn"><a href="/login">Login</a></button>
+    </div>
+
+    <p class="btn" class="account-message">
+      Do you already have an account?
+    </p>
+  </form>
 </div>

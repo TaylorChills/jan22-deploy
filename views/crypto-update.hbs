@@ -1,19 +1,18 @@
 <h2>Update Quantity</h2>
 
-    <form action="/crypto-update/{{coin._id}}" method="post">
+<form action="/crypto-update/{{coin._id}}" method="post">
 
-        <label for="name">{{coin.name}}</label>
-        <br>
-        <input name="name" value="{{coin.name}}" readonly>
-        <br>
-        
+  <label for="name">{{coin.name}}</label>
+  <br />
+  <input name="name" value="{{coin.name}}" readonly />
+  <br />
 
-        <label for="quantity">Quantity</label>
-        <br>
-        <input type="number" name="quantity" min="0" value="{{coin.quantity}}">
-        <br>
+  <label for="quantity">Quantity</label>
+  <br />
+  <input type="number" name="quantity" min="0" value="{{coin.quantity}}" />
+  <br />
 
-        <button type="submit">Submit</button>
-    </form>
+  <button type="submit">Submit</button>
+</form>
 
 <a href="/">Back</a>

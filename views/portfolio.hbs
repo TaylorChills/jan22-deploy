@@ -1,38 +1,34 @@
-
 <div class="total">
-    <h1>Portfolio Total: {{userTotal}}</h1>
-    
-  </div>
+  <h1>Portfolio Total: {{userTotal}}</h1>
 
+</div>
 
-  <table cellspacing="0" class="port-table">
-      <tr class="port-rows">
-        <th class="table-logo"></th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>24 Hour Trading</th>
-        <th>holdings</th>
-        <th></th>
-      </tr>
-    
-      
-    {{#each coinCheck}}
-      <tr class="port-rows">
-        <td><img src="{{image}}" alt="coin-image"></td>
-        <td>{{name}}</td>
-        <td>{{current_price}}</td>
-        <td>{{price_change_percentage_24h}}</td>
-        <td>{{quantity}}</td>
-        <div>
-          <td class="port-buttons">
-            <a href="/crypto-info/{{this.id}}">Info</a>
-            <a href="crypto-update/{{userCoinId}}">Update</a>
-            <form action="/portfolio/delete/{{id}}" method="post">
-              <button>Remove</button>
-            </form>
-          </td>
-        </div>
-      </tr>
-      {{/each}}
-  </table>
-  
+<table cellspacing="0" class="port-table">
+  <tr class="port-rows">
+    <th class="table-logo"></th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>24 Hour Trading</th>
+    <th>holdings</th>
+    <th></th>
+  </tr>
+
+  {{#each coinCheck}}
+    <tr class="port-rows">
+      <td><img src="{{image}}" alt="coin-image" /></td>
+      <td>{{name}}</td>
+      <td>{{current_price}}</td>
+      <td>{{price_change_percentage_24h}}</td>
+      <td>{{quantity}}</td>
+      <div>
+        <td class="port-buttons">
+          <a href="/crypto-info/{{this.id}}">Info</a>
+          <a href="crypto-update/{{userCoinId}}">Update</a>
+          <form action="/portfolio/delete/{{id}}" method="post">
+            <button>Remove</button>
+          </form>
+        </td>
+      </div>
+    </tr>
+  {{/each}}
+</table>
