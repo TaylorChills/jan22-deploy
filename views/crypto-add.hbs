@@ -4,7 +4,7 @@
 
   <form action="/crypto-add" method="post">
 
-    <label  for="name">Name:</label>
+    <label class="coin-label"  for="name">Name:</label>
     
     <input name="name" value="{{id}}" readonly />
     
@@ -13,9 +13,9 @@
     <input type="number" name="quantity" min="0" />
     
 
-    <button class="coin-btn" type="submit">Submit</button>
+    <button class="coin-btn" class="coin-label" type="submit">Submit</button>
   </form>
 
-<a href="/">Back</a>
+<a href="/" class="coin-label">Back</a>
 
 </div>

@@ -1,7 +1,7 @@
 
 a {
     text-decoration: none;
-    color: #daa520;
+    color: #FFD700;
   }
   
    body {
@@ -17,13 +17,22 @@ a {
     position: relative;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.89);
-    color: #daa520;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #FFD700;
   }
   
   .brand-title {
-    font-size: 1.5rem;
-    margin: 1rem;
+    font-size: 2.5rem;
+    
+    margin-top: 2rem;
+  }
+
+  .title-logo {
+    display: flex;
+  }
+
+  .page-logo {
+    width: 9rem;
   }
   
   .navbar-links {
@@ -43,8 +52,9 @@ a {
   .navbar-links li a {
     display: block;
     text-decoration: none;
-    color: #daa520;
+    color: #FFD700;
     padding: 1rem;
+    font-size: 1.25rem;
   }
   
   .navbar-links li:hover {
@@ -65,7 +75,7 @@ a {
   .toggle-button .bar {
     height: 3px;
     width: 100%;
-    background-color: #daa520;
+    background-color: #FFD700;
     border-radius: 10px;
   }
   
