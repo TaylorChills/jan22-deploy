@@ -1,29 +1,49 @@
 <a href="/">Return</a>
 
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Market Cap</th>
-    <th>24 Hour Trading</th>
-    <th>Volume</th>
-    <th>circulating Supply</th>
-    <th>Max Supply</th>
-    <th>Total Supply</th>
+<table cellspacing="0" class="row-section">
 
-  </tr>
-  <tr>
-    <td>{{name}}</td>
-    <td>{{market_data.current_price.usd}}</td>
-    <td>{{market_data.market_cap.usd}}</td>
-    <td>{{market_data.price_change_percentage_24h_in_currency.usd}}</td>
-    <td>{{market_data.total_volume.usd}}</td>
-    <td>{{market_data.circulating_supply}}</td>
-    <td>{{market_data.max_supply}}</td>
-    <td>{{market_data.total_supply}}</td>
-    <td><a href="/crypto-add/{{this.id}}">add</a></td>
-  </tr>
+  {{! First Row }}
+  <div class="row-section">
+    <tr class="port-rows">
+      <th>Name</th>
+      <th>Price</th>
+      <th>Market Cap</th>
+      <th>24 Hour Trading</th>
+    </tr>
+
+    <tr class="port-rows">
+      <td>{{name}}</td>
+      <td>{{market_data.current_price.usd}}</td>
+      <td>{{market_data.market_cap.usd}}</td>
+      <td>{{market_data.price_change_percentage_24h_in_currency.usd}}</td>
+    </tr>
+  </div>
 </table>
+<table cellspacing="0" class="row-section">
+  {{!-- Second Row --}}
+  <div class="row-section">
+    <tr>
+      <th>Volume</th>
+      <th>circulating Supply</th>
+      <th>Max Supply</th>
+      <th>Total Supply</th>
+    </tr>
+    <tr>
+      <td>{{market_data.total_volume.usd}}</td>
+      <td>{{market_data.circulating_supply}}</td>
+      <td>{{market_data.max_supply}}</td>
+      <td>{{market_data.total_supply}}</td>
+    </tr>
+    <table cellspacing="0" class="row-section">
+    <tr>
+      <td><a href="/crypto-add/{{this.id}}">add</a></td>
+    </tr>
+    </table>
+    
+  </div>
+  
+</table>
+
 
 {{!-- <form action="/portfolio/add">
         <label for="quantity">Quantity</label>
